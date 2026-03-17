@@ -1,0 +1,49 @@
+# Editor temp files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+*.old
+.bash_logout
+.bash_profile
+
+# Security
+.ssh
+.gnupg
+.pki
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+.history
+,local/
+.local/share
+.local/share/nvim/swap/
+.local/share/nvim/backup/
+.local/share/nvim/view/
+.local/share/nvim/undo/
+
+# Secrets
+*.pem
+*.key
+*.env
+secrets/
+
+# Build / bin
+bin/
+build/
+dist/
+*.out
+*.exe
+*.o
+
+# Logs
+*.log
+.zsh_history
+.bash_history
+
+zcompdump*

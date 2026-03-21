@@ -65,3 +65,40 @@ alias cat='bat'
 # Custom aliases to push the the dotfiles and more
 alias dotpush="git add -A && git commit -m \"update $(date '+%Y-%m-%d %H:%M')\" && git push"
 alias pkg-export="pacman -Qqe > ~/dotfiles/packages/pacman.txt && pacman -Qqem > ~/dotfiles/packages/aur.txt"
+
+# Custom functions
+greenColour="\e[0;32m\033[1m"
+endColour="\033[0m\e[0m"
+redColour="\e[0;31m\033[1m"
+blueColour="\e[0;34m\033[1m"
+yellowColour="\e[0;33m\033[1m"
+purpleColour="\e[0;35m\033[1m"
+turquoiseColour="\e[0;36m\033[1m"
+grayColour="\e[0;37m\033[1m"
+
+function ctrl_c(){
+  echo -e "${redColour}[!]${endColour} ${grayColour} exiting${endColour}"
+  exit 1
+}
+
+trap ctrl_c SIGINT
+
+function update_yp(){
+
+  echo -e "${purpleColour}[+]${endColour} ${greenColour}Updating packages${endColour}"
+  if [[ $(which yay >/dev/null | echo $?) -ne 1 ]]; then
+    sudo pacman -Syu && yay -Syu
+  else
+    read -p "${redColour}[!]${endColour} ${grayColour}Do you want to install yay [y/n]${endColour}" answer
+    if [[ "$answer" == [yY] || "$answer" == "" ]]; then
+      sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+    else
+      sudo pacman -Syu
+    fi
+  fi
+
+  echo -e "${purpleColour}[+]${endColour} ${greenColour}copying packages${endColour}"
+  sudo pacman -Q > pacman_packages.txt
+  which yay 2>/dev/null && yay -Q > yay_packages.txt 
+  echo -e "${purpleColour}[+]${endColour} ${greenColour}Have a nice day!${endColour}"
+}

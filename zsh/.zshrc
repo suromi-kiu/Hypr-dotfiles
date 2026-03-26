@@ -99,6 +99,6 @@ function update_yp(){
 
   echo -e "${purpleColour}[+]${endColour} ${greenColour}copying packages${endColour}"
   sudo pacman -Q > pacman_packages.txt
-  which yay 2>/dev/null && yay -Q > yay_packages.txt 
+  which yay &>/dev/null && yay -Q > yay_packages.txt 
   echo -e "${purpleColour}[+]${endColour} ${greenColour}Have a nice day!${endColour}"
 }

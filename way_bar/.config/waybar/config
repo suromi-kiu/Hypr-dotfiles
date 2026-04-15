@@ -10,7 +10,7 @@
 
 	"modules-left": ["custom/launcher","cpu","memory","disk","custom/ip"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["custom/vpn","network","pulseaudio", "battery","clock","custom/power"],
+	"modules-right": ["custom/vpn","custom/ip_target","pulseaudio", "battery","clock","custom/power"],
 	
 
     // Sourced modules
@@ -47,7 +47,7 @@
             "active": "<span font='12'>󰮯</span>",
             "empty": "<span font='8'></span>",
             "persistent": "󰊠"
-        },
+        }
     },
 	"network": {
 		"tooltip": false,
@@ -81,7 +81,7 @@
         ]
     },
 
-	"clock": {
+	  "clock": {
         "tooltip": true,
         "interval": 60,
         "format": "{:%H:%M %p}",
@@ -96,7 +96,7 @@
 
     "disk": {
         "format": "<span color='#e0af68'> </span> {used}",
-        "interval": 1,
+        "interval": 1
     },
 
     "memory": {
@@ -146,5 +146,10 @@
         "interval": 2,
         "return-type": "json"
     },
-    
+    "custom/ip_target":{
+        "format": "󰓾 {}",
+        "exec": "/home/suromih/.config/waybar/scripts/ip_target.sh",
+        "interval": 2,
+        "return-type": "json"
+    }
 }

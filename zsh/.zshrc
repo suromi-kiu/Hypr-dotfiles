@@ -102,3 +102,19 @@ function update_yp(){
   which yay &>/dev/null && yay -Q > yay_packages.txt 
   echo -e "${purpleColour}[+]${endColour} ${greenColour}Have a nice day!${endColour}"
 }
+
+function mkt(){
+  if [[ -e "nmap" ]] || [[ -e "files" ]]; then
+    echo -e "${redColour}\n\t[!]${endColour} ${grayColour}The files are maked${endColour}"
+  else
+    mkdir {nmap,files}
+  fi
+}
+
+function set_target(){
+  echo $1 > /home/$(whoami)/.config/waybar/scripts/target.txt
+}
+
+function clear_target(){
+  echo '' > /home/$(whoami)/.config/waybar/scripts/target.txt
+}

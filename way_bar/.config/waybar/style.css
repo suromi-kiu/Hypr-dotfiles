@@ -6,7 +6,6 @@
 	min-height: 10px;
 }
 
-/* 🔥 CONTENEDOR FIX */
 window#waybar {
 	background: rgba(0,0,0,0);
 }
@@ -22,8 +21,8 @@ window#waybar {
 }
 
 /* MARGIN */
-.modules-left { margin-left: 10px; }
-.modules-right { margin-right: 10px; }
+.modules-left { margin-left: 9px; }
+.modules-right { margin-right: 9px; }
 
 /* WORKSPACES */
 #workspaces {
@@ -124,5 +123,23 @@ window#waybar {
 
 /* DISCONNECTED */
 #custom-vpn.disconnected {
+    color: #f7768e;
+}
+
+#custom-ip_target {
+    margin: 6px 0px 6px 8px;
+    padding: 0 12px;
+    border-radius: 18px;
+    background: #222330;
+    font-weight: bold;
+}
+
+/* CONNECTED */
+#custom-ip_target.connected {
+    color: #7dcfff;
+}
+
+/* DISCONNECTED */
+#custom-ip_target.disconnected {
     color: #f7768e;
 }

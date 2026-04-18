@@ -118,3 +118,8 @@ function set_target(){
 function clear_target(){
   echo '' > /home/$(whoami)/.config/waybar/scripts/target.txt
 }
+
+function py_file(){
+  name="$1"
+  /usr/bin/bash /home/$(whoami)/.config/zshrc_scripts/py_file.sh $name
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function do_all(){
-  if [ $(wc -c target.txt | awk '{print $1}') -gt 1 ]; then
+  if [ $(wc -c /home/suromih/.config/waybar/scripts/target.txt | awk '{print $1}') -gt 1 ]; then
       target=$(awk '{print}' target.txt)
       echo "{\"text\": \" $target\", \"class\": \"connected\"}"
   else
@@ -9,9 +9,9 @@ function do_all(){
   fi
 }
 
-if [[ -f "target.txt" ]]; then
+if [[ -f ".config/waybar/scripts/target.txt" ]]; then
   do_all
 else
-  touch target.txt
+  touch /home/suromih/.config/waybar/scripts/target.txt
   do_all
 fi

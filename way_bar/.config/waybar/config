@@ -149,7 +149,7 @@
     "custom/ip_target":{
         "format": "󰓾 {}",
         "exec": "/home/suromih/.config/waybar/scripts/ip_target.sh",
-        "interval": 2,
+        "interval": 1,
         "return-type": "json"
     }
 }

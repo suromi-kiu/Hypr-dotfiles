@@ -123,3 +123,4 @@ function py_file(){
   name="$1"
   /usr/bin/bash /home/$(whoami)/.config/zshrc_scripts/py_file.sh $name
 }
+
